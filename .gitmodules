@@ -1,0 +1,3 @@
+[submodule "Cheetah/dependencies/glfw"]
+	path = Cheetah/dependencies/glfw
+	url = https://github.com/glfw/glfw.git
