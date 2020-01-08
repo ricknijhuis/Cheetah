@@ -18,8 +18,8 @@ namespace game
 
 
 	{
-		Texture* background = resourceLoader.getTexturePtr("C:/Users/RickNijhuis/source/repos/Cheetah/Game/assets/background.jpg");
-		Texture* fighter = resourceLoader.getTexturePtr("C:/Users/RickNijhuis/source/repos/Cheetah/Game/assets/fighter2.png");
+		Texture* background = resourceLoader.getTexturePtr("../../../../Game/assets/background.jpg");
+		Texture* fighter = resourceLoader.getTexturePtr("../../../../Game/assets/fighter2.png");
 
 		background->scale = 2.0f;
 

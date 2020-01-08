@@ -30,7 +30,7 @@ namespace cheetah
 	void Renderer2D::init()
 	{
 		ResourceLoader resourceLoader;
-		Shader* defaultShader = resourceLoader.getShaderPtr("C:/Users/RickNijhuis/source/repos/Cheetah/Game/assets/texture.vert", "C:/Users/RickNijhuis/source/repos/Cheetah/Game/assets/texture.frag");
+		Shader* defaultShader = resourceLoader.getShaderPtr("../../../../Game/assets/texture.vert", "../../../../Game/assets/texture.frag");
 
 		float vertices[] = {
 			// positions         // texture coords
