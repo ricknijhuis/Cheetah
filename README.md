@@ -6,7 +6,7 @@ Welcome to the Cheetah engine, this is manly personal hobby project in order to 
 Currently the engine is at a very early stage but is able to be used for creating simple 2d games without audio. 
 A sample game project is included to provide insight on possible ways to achieve this, this sample project is also used as test application for testing new features, improve API's and profiling.
 
-Having remarks or comments please let me know by filing in an issue!
+Having remarks, comments or ideas? please let me know by filing in an issue!
 
 ## 1. Installation
 1. clone this repository 
