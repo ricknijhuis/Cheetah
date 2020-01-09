@@ -16,12 +16,12 @@ Having remarks, comments or ideas? please let me know by filing in an issue!
 
 if any problems occur,
 1. regenerate cache(in Visual Studio right click cmakelists.txt file and click generate cache)
-2. rebuild solution
+2. rebuild solution.
 
 ## 2. Available features
 - 2d render engine using opengl
 - mouse and keyboard handling
-- window creation
+- window creation.
 
 ## 3. Future features(in order of importance)
 - 2d batch rendering / performance update
@@ -33,3 +33,9 @@ if any problems occur,
 - linux support
 - vulkan support
 - directX support
+
+## 4. Basic Setup
+this setup describes the basic steps needed in order to make your game with the engine, It presumes the installation was succesfull and you are now able to start coding.
+
+## 5. API
+All the exposed methods, classes and structs are described here.
