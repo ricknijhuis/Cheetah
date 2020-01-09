@@ -39,3 +39,37 @@ this setup describes the basic steps needed in order to make your game with the 
 
 ## 5. API
 All the exposed methods, classes and structs are described here.
+
+## Namespaces
+- cheetah
+- input
+- input -> keyCodes
+- input -> mouseBtnCodes
+
+### cheetah
+master namespace contains all namespaces, classes, structs, methods and variables exposed to user.
+
+#### classes
+- Application
+- Window
+- Input
+- Time
+- Event
+- EventDispatcher
+- EventTypes
+- CharInputEvent
+- WindowCloseEvent
+- WindowResizeEvent
+- UpdateLayer
+- UpdateLayerQueue
+- ResourceLoader<T>
+- Mat4x4<T>
+- Quaternion
+- Vector3<T>
+- Vector4<T>
+- Renderer2D
+- OrthoGraphicCamera
+- Texture
+- Shader
+
+ 
