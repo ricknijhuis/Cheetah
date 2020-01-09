@@ -33,7 +33,7 @@ namespace cheetah
 	class CH_API Renderer2D
 	{
 	public:
-		//initializes static render data
+		// initializes static render data
 		static void init();
 		// Begins scene by setting up camera
 		static void beginScene(const OrthoGraphicCamera& camera);

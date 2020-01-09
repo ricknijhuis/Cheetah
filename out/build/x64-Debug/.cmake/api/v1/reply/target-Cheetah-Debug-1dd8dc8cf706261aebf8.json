@@ -47,13 +47,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 176,
+				"line" : 195,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 195,
+				"line" : 176,
 				"parent" : 0
 			},
 			{
@@ -232,11 +232,11 @@
 		},
 		{
 			"backtrace" : 3,
-			"id" : "glfw::@41c89e6e40e27560aa4f"
+			"id" : "stb_image::@3032881c6a6866c9e53b"
 		},
 		{
 			"backtrace" : 4,
-			"id" : "stb_image::@3032881c6a6866c9e53b"
+			"id" : "glfw::@41c89e6e40e27560aa4f"
 		}
 	],
 	"id" : "Cheetah::@3032881c6a6866c9e53b",

@@ -1,5 +1,6 @@
 #include "Renderer.h"
 
+#include "Core/Application.h"
 #include "RenderAction.h"
 #include "Renderer2D.h"
 
@@ -8,6 +9,7 @@ namespace cheetah
 	void Renderer::init()
 	{
 		RenderAction::init();
+		RenderAction::setViewPort(0, 0, Application::getWindow().getWidth(), Application::getWindow().getHeight());
 		Renderer2D::init();
 	}
 

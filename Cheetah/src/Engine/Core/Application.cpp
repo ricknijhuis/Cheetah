@@ -60,9 +60,14 @@ namespace cheetah
 
 	bool Application::onWindowClose(WindowCloseEvent& event)
 	{
+		this->exit();
+		return true;
+	}
+
+	void Application::exit()
+	{
 		m_isRunning = false;
 		Renderer::shutDown();
-		return true;
 	}
 
 	// layers
