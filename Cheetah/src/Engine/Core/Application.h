@@ -24,8 +24,6 @@ namespace cheetah
 		void pushLayer(UpdateLayer* layer);
 		void pushOverlay(UpdateLayer* overlay);
 
-		void exit();
-
 		static Window& getWindow();
 		static Application& getApplication();
 

@@ -30,7 +30,7 @@ rule CUSTOM_COMMAND
 
 rule CXX_COMPILER__Cheetah
   deps = msvc
-  command = C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
 
 
@@ -38,7 +38,7 @@ rule CXX_COMPILER__Cheetah
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__Cheetah
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_dll --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x64\mt.exe --manifests $MANIFESTS -- C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /dll /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES  && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_dll --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests $MANIFESTS -- C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /dll /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES  && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -48,7 +48,7 @@ rule CXX_SHARED_LIBRARY_LINKER__Cheetah
 
 rule C_COMPILER__glad
   deps = msvc
-  command = C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building C object $out
 
 
@@ -56,7 +56,7 @@ rule C_COMPILER__glad
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__glad
-  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -66,7 +66,7 @@ rule C_STATIC_LIBRARY_LINKER__glad
 
 rule CXX_COMPILER__stb_image
   deps = msvc
-  command = C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
 
 
@@ -74,7 +74,7 @@ rule CXX_COMPILER__stb_image
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__stb_image
-  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
 
@@ -84,7 +84,7 @@ rule CXX_STATIC_LIBRARY_LINKER__stb_image
 
 rule C_COMPILER__glfw
   deps = msvc
-  command = C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building C object $out
 
 
@@ -92,7 +92,7 @@ rule C_COMPILER__glfw
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__glfw
-  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /lib /nologo $LINK_FLAGS /out:$TARGET_FILE $in  && $POST_BUILD"
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -102,7 +102,7 @@ rule C_STATIC_LIBRARY_LINKER__glfw
 
 rule CXX_COMPILER__Game
   deps = msvc
-  command = C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\HostX64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building CXX object $out
 
 
@@ -110,7 +110,7 @@ rule CXX_COMPILER__Game
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Game
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100177~1.0\x64\mt.exe --manifests $MANIFESTS -- C:\PROGRA~2\MICROS~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0  $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E vs_link_exe --intdir=$OBJECT_DIR --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests $MANIFESTS -- C:\PROGRA~2\MIB055~1\2019\PROFES~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0  $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 

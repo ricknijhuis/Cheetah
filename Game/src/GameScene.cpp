@@ -13,6 +13,7 @@ namespace game
 	void GameScene::updateScene(float deltaTime)
 	{
 		handleInput(deltaTime);
+
 		GameObject& bg1 = this->getGameObject("background1");
 		GameObject& bg2 = this->getGameObject("background2");
 
