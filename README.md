@@ -14,6 +14,12 @@ Having remarks, comments or ideas? please let me know by filing in an issue!
 3. [Future features](#3-future-featuresin-order-of-importance)
 4. [Basic setup](#4-basic-setup)
 5. [API](#5-api)
+ 5.1. [Namespaces](#namespaces)
+  5.1.1. [Namespace cheetah](#namespace-cheetah)
+   5.1.1.1 [Classes](#classes)
+   5.1.1.2 [Structs](#structs)
+   5.1.1.3 [Functions](#functions)
+   5.1.1.4 [Macros](#macros)
 
 ## 1. Installation
 1. clone this repository 
@@ -53,7 +59,7 @@ All the exposed methods, classes and structs are described here.
 - input -> keyCodes
 - input -> mouseBtnCodes
 
-### cheetah
+## Namespace cheetah
 master namespace contains all namespaces, classes, structs, methods and variables exposed to user.
 
 #### classes
