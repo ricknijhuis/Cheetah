@@ -91,7 +91,7 @@ master namespace contains all namespaces, classes, structs, methods and variable
     ##### Description
     Starting and closing point of the application, handles game loop.
 
-    #### Methods
+    ##### Methods
      ```c++
      void pushLayer(UpdateLayer* layer);
      ```
