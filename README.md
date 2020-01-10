@@ -10,6 +10,7 @@ Having remarks, comments or ideas? please let me know by filing in an issue!
 
 ## Contents
 [1. installation](#Installation)
+[2. available features](#Available-features)
 
 ## 1. Installation
 1. clone this repository 
