@@ -11,7 +11,9 @@ Having remarks, comments or ideas? please let me know by filing in an issue!
 ## Contents
 1. [Installation](#1-installation)                                                                                                       
 2. [Available features](#2-available-features)
-3. [Future features](#3-future-features(in-order-of-importance))
+3. [Future features](#3-future-featuresin-order-of-importance)
+4. [Basic setup](#4-basic-setup)
+5. [API](#5-api)
 
 ## 1. Installation
 1. clone this repository 
