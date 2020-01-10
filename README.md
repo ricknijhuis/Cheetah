@@ -9,8 +9,9 @@ A sample game project is included to provide insight on possible ways to achieve
 Having remarks, comments or ideas? please let me know by filing in an issue!
 
 ## Contents
-[1. Installation](#installation)
-[2. Available features](#available-features)
+[1. Installation](#1-installation)
+
+[2. Available features](##2-available-features)
 
 ## 1. Installation
 1. clone this repository 
