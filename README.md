@@ -91,30 +91,30 @@ master namespace contains all namespaces, classes, structs, methods and variable
     ##### Description
     Starting and closing point of the application, handles game loop.
 
-          ```c++
-          void pushLayer(UpdateLayer* layer);
-          ```
+     ```c++
+     void pushLayer(UpdateLayer* layer);
+     ```
      Adds an update layer to your application, atleast one layer is required to be able to hook in to the game loop, events
      are passed down layers until an event is "handled"
      
-          ```c++
-          void pushOverlay(UpdateLayer* overlay);
-          ```
+     ```c++
+     void pushOverlay(UpdateLayer* overlay);
+     ```
      Adds an UpdateLayer at top level to your application, best used as UI Layer in order to get the events first
           
-          ```c++
-          static void exit();
-          ```
+     ```c++
+     static void exit();
+     ```
      Exits the application and shutsdown all subsystems
      
-          ```c++
-          static Application& getApplication();
-          ```
+     ```c++
+     static Application& getApplication();
+     ```
      Provides an getter to the application
      
-          ```c++
-          static Window& getWindow();
-          ```
+     ```c++
+     static Window& getWindow();
+     ```
      Provides an getter to the window of the application
 
 #### structs
