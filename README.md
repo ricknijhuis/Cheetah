@@ -86,8 +86,28 @@ master namespace contains all namespaces, classes, structs, methods and variable
 - Shader
     
     #### - Application
+    > class in cheetah
     
-    
+    ##### Description
+    Starting and closing point of the application, handles game loop.
+
+          ```c++
+          void pushLayer(UpdateLayer* layer);
+          ```
+          adds an update layer to your application, atleast one layer is required to be able to hook in to the game loop, events
+          are passed down layers until an event is "handled"
+          ```c++
+          void pushOverlay(UpdateLayer* overlay);
+          ```
+          ```c++
+          static void exit();
+          ```
+          ```c++
+          static Application& getApplication();
+          ```
+          ```c++
+          static Window& getWindow();
+          ```
 
 #### structs
 - TextureParams
