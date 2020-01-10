@@ -8,6 +8,9 @@ A sample game project is included to provide insight on possible ways to achieve
 
 Having remarks, comments or ideas? please let me know by filing in an issue!
 
+## Contents
+[1. installation](#Installation)
+
 ## 1. Installation
 1. clone this repository 
 2. open folder in your IDE and generate the CMAKE cache (in Visual Studio select file->open->cmake and open cmakelists.txt file)
