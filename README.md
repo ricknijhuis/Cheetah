@@ -79,4 +79,20 @@ master namespace contains all namespaces, classes, structs, methods and variable
 - Texture
 - Shader
 
+#### structs
+- TextureParams
+- OrthoGraphicCameraParams
+- DrawQuadParams
+- DrawTexturedQuadParams
+
+#### functions
+- createApplication
+
+#### macros
+- CH_PLATFORM_WINDOWS
+- CH_BUILD_DLL
+- CH_API
+- CH_ASSERT_ENABLED
+- ASSERT
+- STATIC_ASSERT
  
