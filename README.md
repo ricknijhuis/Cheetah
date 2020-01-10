@@ -13,13 +13,13 @@ Having remarks, comments or ideas? please let me know by filing in an issue!
 2. [Available features](#2-available-features)
 3. [Future features](#3-future-featuresin-order-of-importance)
 4. [Basic setup](#4-basic-setup) 
-5. [API](#5-api)
-5.1 [Namespaces](#namespaces)\
-         5.1.1. [Namespace cheetah](#namespace-cheetah)                                                                    
-                5.1.1.1. [Classes](#classes)
-                5.1.1.2. [Structs](#structs)
-                5.1.1.3. [Functions](#functions)
-                5.1.1.4. [Macros](#macros)
+5. [API](#5-api)\
+    5.1 [Namespaces](#namespaces)\
+        5.1.1. [Namespace cheetah](#namespace-cheetah)\                                                                    
+            5.1.1.1. [Classes](#classes)\
+            5.1.1.2. [Structs](#structs)\
+            5.1.1.3. [Functions](#functions)\
+            5.1.1.4. [Macros](#macros)\
 
 ## 1. Installation
 1. clone this repository 
