@@ -77,11 +77,11 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_MATH_DIR}/Vector3.inl"
 	"${ENGINE_MATH_DIR}/Vector4.h"
 	"${ENGINE_MATH_DIR}/Vector4.inl"
+	"${ENGINE_MATH_DIR}/Quaternion.h"
+	"${ENGINE_MATH_DIR}/Quaternion.inl"
 	"${ENGINE_MATH_DIR}/Mat4x4.h"
 	"${ENGINE_MATH_DIR}/Mat4x4.inl"
 	"${ENGINE_MATH_DIR}/Mat4x4.cpp"
-	"${ENGINE_MATH_DIR}/Quaternion.h"
-	"${ENGINE_MATH_DIR}/Quaternion.cpp"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.h"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.inl"
 	"${ENGINE_RESOURCES_DIR}/ResourceLoader.h"
@@ -146,8 +146,7 @@ target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:DEBUG>")
 target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:CH_ASSERT_ENABLED>")
 
 set_target_properties(Cheetah PROPERTIES LINKER_LANGUAGE CXX)
-message("///////////////////////////////////////////////////////////////")
-message("${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah/Cheetah.dll")
+
 # Copy dll to game project build folder
 add_custom_command(
 	TARGET Cheetah 
