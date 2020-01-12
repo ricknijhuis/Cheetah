@@ -10,7 +10,18 @@
       "cmakeCommandArgs": "",
       "buildCommandArgs": "-v",
       "ctestCommandArgs": "",
-      "variables": []
+      "variables": [
+        {
+          "name": "CMAKE_INSTALL_PREFIX",
+          "value": "C:/Projects/Cheetah/out/install/x64-Debug",
+          "type": "PATH"
+        },
+        {
+          "name": "CHEETAH_LIB",
+          "value": "C:/Projects/Cheetah/out//build/x64-Debug/Cheetah/Cheetah.lib",
+          "type": "FILEPATH"
+        }
+      ]
     }
   ]
 }

@@ -65,7 +65,7 @@ namespace cheetah
 	template<>
 	inline Mat4x4<float> Quaternion<float>::getMatrix() const
 	{
-		Vector4f vec = normalize(Vector4f(m_data[0], m_data[1], m_data[2], 1.0f));
+		Vector4f vec = normalize(Vector4f(m_data[0], m_data[1], m_data[2], m_data[3]));
 		std::vector<float> mat = std::vector<float>
 		{
 			1.0f - 2.0f * vec.y * vec.y - 2.0f * vec.z * vec.z,		2.0f * vec.x * vec.y - 2.0f * vec.z * vec.w,			2.0f * vec.x * vec.z + 2.0f * vec.y * vec.w,			0.0f,
