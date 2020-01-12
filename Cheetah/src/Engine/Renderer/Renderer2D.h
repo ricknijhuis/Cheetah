@@ -17,7 +17,7 @@ namespace cheetah
 	{
 		Vector3f position;
 		Vector3f scale;
-		Quaternion rotation;
+		Quaternionf rotation;
 		Vector4f color;
 	};
 
@@ -25,7 +25,7 @@ namespace cheetah
 	{
 		Vector3f position;
 		Vector3f scale;
-		Quaternion rotation;
+		Quaternionf rotation;
 		Vector4f color;
 		Texture* texture = nullptr;
 	};

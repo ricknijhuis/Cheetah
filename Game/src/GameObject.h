@@ -9,7 +9,7 @@ namespace game
 	{
 		cheetah::Vector3f position = cheetah::Vector3f(0.0f);
 		cheetah::Vector3f scale = cheetah::Vector3f(1.0f);
-		cheetah::Quaternion rotation = cheetah::Quaternion();
+		cheetah::Quaternionf rotation = cheetah::Quaternionf();
 		cheetah::Vector4f color = cheetah::Vector4f(1.0f);
 		cheetah::Texture* texture = nullptr;
 	};
@@ -26,7 +26,7 @@ namespace game
 		void draw();
 	public:
 		cheetah::Texture* m_texture = nullptr;
-		cheetah::Quaternion m_rotation;
+		cheetah::Quaternionf m_rotation;
 		cheetah::Vector3f m_position;
 		cheetah::Vector3f m_scale;
 		cheetah::Vector4f m_color;

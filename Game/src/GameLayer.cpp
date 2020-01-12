@@ -28,7 +28,7 @@ namespace game
 			{
 				Vector3f(0.0f, 0.0f, 0.0f),
 				Vector3f((float)Application::getWindow().getWidth(), (float)Application::getWindow().getHeight(), 0.0f),
-				Quaternion(),
+				Quaternionf(),
 				Vector4f(1.0f),
 				background
 			});
@@ -38,7 +38,7 @@ namespace game
 			{
 				Vector3f(0.0f, 0.0f -((float)Application::getWindow().getHeight()), 0.0f),
 				Vector3f((float)Application::getWindow().getWidth(), (float)Application::getWindow().getHeight(), 0.0f),
-				Quaternion(),
+				Quaternionf(),
 				Vector4f(1.0f),
 				background
 			});
@@ -48,7 +48,7 @@ namespace game
 			{
 				Vector3f(0.0f, 0.0f, 1.0),
 				Vector3f(100.0f, 70.0f, 1.0f),
-				Quaternion(),
+				Quaternionf(),
 				Vector4f(1.0f),
 				fighter
 			}

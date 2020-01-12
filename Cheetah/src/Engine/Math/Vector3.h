@@ -1,28 +1,48 @@
 #ifndef CHEETAH_ENGINE_MATH_VECTOR3_H_
 #define CHEETAH_ENGINE_MATH_VECTOR3_H_
 
-#include "Core/Core.h"
+#include "../Core/Core.h"
 
 namespace cheetah
 {
 	template<typename T>
-	class Vector3
+	union Vector3
 	{
-	protected:
-		T m_data[3];
-	public:
-		T& x;
-		T& y;
-		T& z;
+		inline Vector3();
+		inline Vector3(const T& fill);
+		inline Vector3(const T fill[3]);
+		inline Vector3(const T& x, const T& y, const T& z);
 
-	public:
-		Vector3(const T& fill);
-		Vector3(const T& x, const T& y, const T& z);
+		struct
+		{
+			T x, y, z;
+		};
+
+		inline const T* get() const;
+
+		inline T magnitude() const;
+		inline Vector3<T> cross(const Vector3<T>& rhs) const;
+
+		inline void operator *= (const T& rhs);
+		inline void operator += (const T& rhs);
+		inline void operator -= (const T& rhs);
+		inline void operator /= (const T& rhs);
+
+		inline Vector3<T> operator + (const Vector3<T>& rhs) const;
+		inline Vector3<T> operator - (const Vector3<T>& rhs) const;
+
+		inline T operator * (const Vector3<T>& rhs) const;
+
+	private:
+		struct
+		{
+			T m_data[3];
+		};
 	};
 
-	template class CH_API Vector3<float>;
-	template class CH_API Vector3<int>;
-	template class CH_API Vector3<double>;
+	template union CH_API Vector3<float>;
+	template union CH_API Vector3<int>;
+	template union CH_API Vector3<double>;
 
 	using Vector3f = Vector3<float>;
 	using Vector3i = Vector3<int>;
