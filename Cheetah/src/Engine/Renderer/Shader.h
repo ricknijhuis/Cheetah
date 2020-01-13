@@ -26,6 +26,8 @@ namespace cheetah
 		virtual void setFloat4(const std::string& name, float x, float y, float z, float w) const = 0;
 		virtual void setMat4f(const std::string& name, const bool& transpose, float* value) const = 0;
 
+		virtual const unsigned int getId() const = 0;
+
 		static short int getShaderTypeSize(ShaderTypes shaderType);
 		static short int getShaderTypeComponentCount(ShaderTypes shaderType);
 		static std::unique_ptr<Shader> create(const std::string& contents);

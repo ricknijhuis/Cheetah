@@ -1,0 +1,18 @@
+Performance test normal rendering
+
+- profile x64 release
+
+test 1:
+max fps: 1470.65
+
+test 2:
+max fps: 1449.69
+
+test 3:
+max fps: 1508.61
+
+test 4:
+max fps: 1947.22
+
+test 5:
+max fps: 1129.85

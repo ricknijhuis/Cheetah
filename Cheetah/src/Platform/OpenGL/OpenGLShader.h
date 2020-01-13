@@ -27,6 +27,8 @@ namespace cheetah
 			void setFloat4(const std::string& name, float x, float y, float z, float w) const override;
 			void setMat4f(const std::string& name, const bool& transpose, float* value) const override;
 
+			const unsigned int getId() const override;
+
 		private:
 			void isSuccesShader(unsigned int id) const;
 			void isSuccesProgram(unsigned int id) const;

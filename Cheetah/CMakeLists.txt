@@ -61,6 +61,8 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_RENDERER_DIR}/Texture.cpp"
 	"${ENGINE_RENDERER_DIR}/OrthoGraphicCamera.h"
 	"${ENGINE_RENDERER_DIR}/OrthoGraphicCamera.cpp"
+	"${ENGINE_RENDERER_DIR}/Renderer2DQueue.h"
+	"${ENGINE_RENDERER_DIR}/Renderer2DQueue.cpp"
 	"${ENGINE_INPUT_DIR}/Input.h"
 	"${ENGINE_INPUT_DIR}/Input.cpp"
 	"${ENGINE_EVENTS_DIR}/ApplicationEvents.h"
@@ -146,15 +148,13 @@ target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:DEBUG>")
 target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:CH_ASSERT_ENABLED>")
 
 set_target_properties(Cheetah PROPERTIES LINKER_LANGUAGE CXX)
-message("///////////////////////////////////////////////////////////////")
-message("${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah/Cheetah.dll")
 # Copy dll to game project build folder
 add_custom_command(
 	TARGET Cheetah 
 	POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E copy_if_different
-	"${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah/Cheetah.dll"
-	"${PROJECT_SOURCE_DIR}/out/build/x64-Debug/${APPLICATION_NAME}"
+	"${PROJECT_BINARY_DIR}/Cheetah/Cheetah.dll"
+	"${PROJECT_BINARY_DIR}/${APPLICATION_NAME}"
 )
 
 #----------------------------------------------

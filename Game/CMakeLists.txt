@@ -17,9 +17,9 @@ list(APPEND SOURCE_FILES
 	"${SOURCE_DIR}/GameScene.cpp"
 )
 
-#find_library( CHEETAH_LIB 
-#	NAMES Cheetah
-#	HINTS "${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah")
+find_library( CHEETAH_LIB 
+	NAMES Cheetah
+	HINTS "${CMAKE_BINARY_DIR}/Cheetah")
 
 # Add source to this project's executable.
 add_executable (Game ${SOURCE_FILES})

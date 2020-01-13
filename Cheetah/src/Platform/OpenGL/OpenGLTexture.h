@@ -19,6 +19,7 @@ namespace cheetah
 
 			void addData(void* contents) const override;
 
+			const unsigned int getId() const override;
 			int getWidth() const override;
 			int getHeight() const override;
 			int getChannels() const override;

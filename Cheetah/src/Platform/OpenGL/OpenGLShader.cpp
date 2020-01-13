@@ -176,5 +176,10 @@ namespace cheetah
 			}
 			glUniformMatrix4fv(location, 1, transpose, value);
 		}
+
+		const unsigned int OpenGLShader::getId() const
+		{
+			return m_id;
+		}
 	}
 }

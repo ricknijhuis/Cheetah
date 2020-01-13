@@ -6,22 +6,6 @@ namespace cheetah
 {
 	namespace opengl
 	{
-		//OpenGLTexture::OpenGLTexture(unsigned int width, unsigned int height, void* data, short int nrOfChannels)
-		//	: m_width(width), m_height(height), m_channels(convertChannel(nrOfChannels))
-		//{
-		//	if (!data)
-		//	{
-		//		int i = -1;
-		//		data = &i;
-		//	}
-
-		//	glGenTextures(1, &m_id);
-		//	glBindTexture(GL_TEXTURE_2D, m_id);
-		//	glTexStorage2D(GL_TEXTURE_2D, 1, GL_RGBA8, m_width, m_height);
-		//	glTexSubImage2D(GL_TEXTURE_2D, m_id, 0, 0, m_width, m_height, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		//	glGenerateMipmap(GL_TEXTURE_2D);
-		//}
-
 		OpenGLTexture::OpenGLTexture(const CreateTextureParams& params)
 			: m_width(params.width), m_height(params.height), m_channels(convertChannel(params.nrOfChannels))
 		{
@@ -60,6 +44,11 @@ namespace cheetah
 			glBindTexture(GL_TEXTURE_2D, m_id);
 			glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, this->m_width, this->m_height, GL_RGB, GL_UNSIGNED_INT, contents);
 			glGenerateMipmap(GL_TEXTURE_2D);
+		}
+
+		const unsigned int OpenGLTexture::getId() const
+		{
+			return m_id;
 		}
 
 		int OpenGLTexture::getWidth() const

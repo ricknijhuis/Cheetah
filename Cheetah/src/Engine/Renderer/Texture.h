@@ -23,6 +23,7 @@ namespace cheetah
 
 		virtual void addData(void* contents) const = 0;
 		
+		virtual const unsigned int getId() const = 0;
 		virtual int getWidth() const = 0;
 		virtual int getHeight() const = 0;
 		virtual int getChannels() const = 0;

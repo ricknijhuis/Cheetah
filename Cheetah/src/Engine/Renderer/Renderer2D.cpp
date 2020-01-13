@@ -105,7 +105,6 @@ namespace cheetah
 	void Renderer2D::drawQuad(const DrawTexturedQuadParams& params)
 	{
 		params.texture->bind();
-
 		Mat4x4f transform = Mat4x4f::translate(Mat4x4f(1.0f), params.position) * Mat4x4f::scale(params.scale) * params.rotation.getMatrix();
 
 		s_data->shader->setFloat4("u_Color", params.color.x, params.color.y, params.color.z, params.color.w);
