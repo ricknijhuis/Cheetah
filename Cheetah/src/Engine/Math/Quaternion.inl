@@ -32,46 +32,46 @@ namespace cheetah
 		return &m_data[0];
 	}
 
-	//template<>
-	//inline Mat4x4<int> Quaternion<int>::getMatrix() const
-	//{
-	//	Quaternion<int> quat = normalize(Quaternion<int>(axisX, axisY, axisZ, degrees));
-	//	std::vector<int> mat = std::vector<int>
-	//	{
-	//		1 - 2 * quat.m_data[1] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[0] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[3],			2 * quat.m_data[0] * quat.m_data[2] + 2 * quat.m_data[1] * quat.m_data[3],			0,
-	//		2 * quat.m_data[0] * quat.m_data[1] + 2 * quat.m_data[2] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[1] * quat.m_data[2] - 2 * quat.m_data[0] * quat.m_data[3],			0,
-	//		2 * quat.m_data[0] * quat.m_data[2] - 2 * quat.m_data[1] * quat.m_data[3],			2 * quat.m_data[1] * quat.m_data[2] + 2 * quat.m_data[0] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[1] * quat.m_data[1],		0,
-	//		0,																					0,																					0,																					1
-	//	};
+	template<>
+	inline Mat4x4<int> Quaternion<int>::getMatrix() const
+	{
+		Quaternion<int> quat = normalize(Quaternion<int>(axisX, axisY, axisZ, degrees));
+		std::vector<int> mat = std::vector<int>
+		{
+			1 - 2 * quat.m_data[1] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[0] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[3],			2 * quat.m_data[0] * quat.m_data[2] + 2 * quat.m_data[1] * quat.m_data[3],			0,
+			2 * quat.m_data[0] * quat.m_data[1] + 2 * quat.m_data[2] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[1] * quat.m_data[2] - 2 * quat.m_data[0] * quat.m_data[3],			0,
+			2 * quat.m_data[0] * quat.m_data[2] - 2 * quat.m_data[1] * quat.m_data[3],			2 * quat.m_data[1] * quat.m_data[2] + 2 * quat.m_data[0] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[1] * quat.m_data[1],		0,
+			0,																					0,																					0,																					1
+		};
 
-	//	return Mat4x4i(mat);
-	//}
+		return Mat4x4i(mat);
+	}
 
-	//template<>
-	//inline Mat4x4<double> Quaternion<double>::getMatrix() const
-	//{
-	//	Quaternion<double> quat = normalize(Quaternion<double>(axisX, axisY, axisZ, degrees));
-	//	std::vector<double> mat = std::vector<double>
-	//	{
-	//		1 - 2 * quat.m_data[1] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[0] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[3],			2 * quat.m_data[0] * quat.m_data[2] + 2 * quat.m_data[1] * quat.m_data[3],			0,
-	//		2 * quat.m_data[0] * quat.m_data[1] + 2 * quat.m_data[2] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[1] * quat.m_data[2] - 2 * quat.m_data[0] * quat.m_data[3],			0,
-	//		2 * quat.m_data[0] * quat.m_data[2] - 2 * quat.m_data[1] * quat.m_data[3],			2 * quat.m_data[1] * quat.m_data[2] + 2 * quat.m_data[0] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[1] * quat.m_data[1],		0,
-	//		0,																					0,																					0,																					1
-	//	};
+	template<>
+	inline Mat4x4<double> Quaternion<double>::getMatrix() const
+	{
+		Quaternion<double> quat = normalize(Quaternion<double>(axisX, axisY, axisZ, degrees));
+		std::vector<double> mat = std::vector<double>
+		{
+			1 - 2 * quat.m_data[1] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[0] * quat.m_data[1] - 2 * quat.m_data[2] * quat.m_data[3],			2 * quat.m_data[0] * quat.m_data[2] + 2 * quat.m_data[1] * quat.m_data[3],			0,
+			2 * quat.m_data[0] * quat.m_data[1] + 2 * quat.m_data[2] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[2] * quat.m_data[2],		2 * quat.m_data[1] * quat.m_data[2] - 2 * quat.m_data[0] * quat.m_data[3],			0,
+			2 * quat.m_data[0] * quat.m_data[2] - 2 * quat.m_data[1] * quat.m_data[3],			2 * quat.m_data[1] * quat.m_data[2] + 2 * quat.m_data[0] * quat.m_data[3],			1 - 2 * quat.m_data[0] * quat.m_data[0] - 2 * quat.m_data[1] * quat.m_data[1],		0,
+			0,																					0,																					0,																					1
+		};
 
-	//	return Mat4x4d(mat);
-	//}
+		return Mat4x4d(mat);
+	}
 
 	template<>
 	inline Mat4x4<float> Quaternion<float>::getMatrix() const
 	{
-		Vector4f vec = normalize(Vector4f(m_data[0], m_data[1], m_data[2], m_data[3]));
+		Quaternion<float> quat = normalize(Quaternion<float>(axisX, axisY, axisZ, degrees));
 		std::vector<float> mat = std::vector<float>
 		{
-			1.0f - 2.0f * vec.y * vec.y - 2.0f * vec.z * vec.z,		2.0f * vec.x * vec.y - 2.0f * vec.z * vec.w,			2.0f * vec.x * vec.z + 2.0f * vec.y * vec.w,			0.0f,
-			2.0f * vec.x * vec.y + 2.0f * vec.z * vec.w,			1.0f - 2.0f * vec.x * vec.x - 2.0f * vec.z * vec.z,		2.0f * vec.y * vec.z - 2.0f * vec.x * vec.w,			0.0f,
-			2.0f * vec.x * vec.z - 2.0f * vec.y * vec.w,			2.0f * vec.y * vec.z + 2.0f * vec.x * vec.w,			1.0f - 2.0f * vec.x * vec.x - 2.0f * vec.y * vec.y,		0.0f,
-			0.0f,													0.0f,													0.0f,													1.0f
+			1.0f - 2 * quat.m_data[1] * quat.m_data[1] - 2.0f * quat.m_data[2] * quat.m_data[2],		2.0f * quat.m_data[0] * quat.m_data[1] - 2.0f * quat.m_data[2] * quat.m_data[3],			2.0f * quat.m_data[0] * quat.m_data[2] + 2.0f * quat.m_data[1] * quat.m_data[3],			0.0f,
+			2.0f * quat.m_data[0] * quat.m_data[1] + 2.0f * quat.m_data[2] * quat.m_data[3],			1.0f - 2.0f * quat.m_data[0] * quat.m_data[0] - 2.0f * quat.m_data[2] * quat.m_data[2],		2.0f * quat.m_data[1] * quat.m_data[2] - 2.0f * quat.m_data[0] * quat.m_data[3],			0.0f,
+			2.0f * quat.m_data[0] * quat.m_data[2] - 2.0f * quat.m_data[1] * quat.m_data[3],			2.0f * quat.m_data[1] * quat.m_data[2] + 2.0f * quat.m_data[0] * quat.m_data[3],			1.0f - 2.0f * quat.m_data[0] * quat.m_data[0] - 2.0f * quat.m_data[1] * quat.m_data[1],		0.0f,
+			0.0f,																						0.0f,																						0.0f,																						1.0f
 		};
 
 		return Mat4x4f(mat);
@@ -80,7 +80,6 @@ namespace cheetah
 	template<typename T>
 	inline Mat4x4<T> Quaternion<T>::getMatrix() const
 	{
-		return Mat4x4<T>();
 	}
 
 
@@ -121,46 +120,46 @@ namespace cheetah
 	}
 
 	template<>
-	inline Vector4<int> Quaternion<int>::normalize(const Vector4<int>& vector) const
+	inline Quaternion<int> Quaternion<int>::normalize(const Quaternion<int>& quat) const
 	{
-		const int n = 1 / sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z + vector.w * vector.w);
-		Vector4<int> quat(vector.x, vector.y, vector.z, vector.w);
-		quat.x *= n;
-		quat.y *= n;
-		quat.z *= n;
-		quat.w *= n;
+		const int n = 1 / sqrt(quat.axisX * quat.axisX + quat.axisY * quat.axisY + quat.axisZ * quat.axisZ + quat.degrees * quat.degrees);
+		Quaternion<int> q(quat.axisX, quat.axisY, quat.axisZ, quat.degrees);
+		q.m_data[0] *= n;
+		q.m_data[1] *= n;
+		q.m_data[2] *= n;
+		q.m_data[3] *= n;
 
 		return quat;
 	}
 
 	template<>
-	inline Vector4<double> Quaternion<double>::normalize(const Vector4<double>& vector) const
+	inline Quaternion<double> Quaternion<double>::normalize(const Quaternion<double>& quat) const
 	{
-		const double n = 1 / sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z + vector.w * vector.w);
-		Vector4<double> quat(vector.x, vector.y, vector.z, vector.w);
-		quat.x *= n;
-		quat.y *= n;
-		quat.z *= n;
-		quat.w *= n;
+		const double n = 1 / sqrt(quat.axisX * quat.axisX + quat.axisY * quat.axisY + quat.axisZ * quat.axisZ + quat.degrees * quat.degrees);
+		Quaternion<double> q(quat.axisX, quat.axisY, quat.axisZ, quat.degrees);
+		q.m_data[0] *= n;
+		q.m_data[1] *= n;
+		q.m_data[2] *= n;
+		q.m_data[3] *= n;
 
 		return quat;
 	}
 
 	template<>
-	inline Vector4<float> Quaternion<float>::normalize(const Vector4<float>& vector) const
+	inline Quaternion<float> Quaternion<float>::normalize(const Quaternion<float>& quat) const
 	{
-		const float n = 1.0f / sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z + vector.w * vector.w);
-		Vector4<float> quat(vector.x, vector.y, vector.z, vector.w);
-		quat.x *= n;
-		quat.y *= n;
-		quat.z *= n;
-		quat.w *= n;
+		const float n = 1.0f / sqrt(quat.axisX * quat.axisX + quat.axisY * quat.axisY + quat.axisZ * quat.axisZ + quat.degrees * quat.degrees);
+		Quaternion<float> q(quat.axisX, quat.axisY, quat.axisZ, quat.degrees);
+		q.m_data[0] *= n;
+		q.m_data[1] *= n;
+		q.m_data[2] *= n;
+		q.m_data[3] *= n;
 
 		return quat;
 	}
 
 	template<typename T>
-	inline Vector4<T> Quaternion<T>::normalize(const Vector4<T>& vector) const
+	inline Quaternion<T> Quaternion<T>::normalize(const Quaternion<T>& quat) const
 	{
 	}
 

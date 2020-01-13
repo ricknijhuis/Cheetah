@@ -29,7 +29,7 @@ namespace cheetah
 		inline Mat4x4<T> getMatrix() const;
 
 		inline void normalize();
-		inline Vector4<T> normalize(const Vector4<T>& vector) const;
+		inline Quaternion<T> normalize(const Quaternion<T>& vector) const;
 
 		inline void operator *= (const T& rhs);
 		inline void operator += (const T& rhs);

@@ -81,7 +81,7 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_MATH_DIR}/Mat4x4.inl"
 	"${ENGINE_MATH_DIR}/Mat4x4.cpp"
 	"${ENGINE_MATH_DIR}/Quaternion.h"
-	"${ENGINE_MATH_DIR}/Quaternion.cpp"
+	"${ENGINE_MATH_DIR}/Quaternion.inl"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.h"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.inl"
 	"${ENGINE_RESOURCES_DIR}/ResourceLoader.h"
