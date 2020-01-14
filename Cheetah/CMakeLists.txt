@@ -75,6 +75,7 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_EVENTS_DIR}/InputEvents.h"
 	"${ENGINE_EVENTS_DIR}/InputEvents.cpp"
 	"${ENGINE_MATH_DIR}/Vector.cpp"
+	"${ENGINE_MATH_DIR}/Vector.h"
 	"${ENGINE_MATH_DIR}/Vector3.h"
 	"${ENGINE_MATH_DIR}/Vector3.inl"
 	"${ENGINE_MATH_DIR}/Vector4.h"

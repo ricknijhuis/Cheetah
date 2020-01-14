@@ -5,6 +5,7 @@
 #include <iostream>
 
 using namespace cheetah;
+using namespace math;
 
 static ResourceLoader resourceLoader;
 

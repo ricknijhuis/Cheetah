@@ -4,15 +4,17 @@
 
 namespace cheetah
 {
-	template union Vector4<float>;
-	template union Vector4<int>;
-	template union Vector4<double>;
+	namespace math
+	{
+		template class Vector4<float>;
+		template class Vector4<int>;
+		template class Vector4<double>;
 
-	template union Vector3<float>;
-	template union Vector3<int>;
-	template union Vector3<double>;
+		template class Vector3<float>;
+		template class Vector3<int>;
+		template class Vector3<double>;
 
-	template union Quaternion<float>;
-	template union Quaternion<int>;
-	template union Quaternion<double>;
+		template class Quaternion<float>;
+		template class Quaternion<double>;
+	}
 }

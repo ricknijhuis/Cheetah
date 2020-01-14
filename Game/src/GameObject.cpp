@@ -1,6 +1,7 @@
 #include "GameObject.h"
 
 using namespace cheetah;
+using namespace math;
 
 namespace game
 {
@@ -18,21 +19,21 @@ namespace game
 		m_texture = texture;
 	}
 
-	void GameObject::setPosition(const cheetah::Vector3f& position)
+	void GameObject::setPosition(const Vector3f& position)
 	{
 		m_position.x = position.x;
 		m_position.y = position.y;
 		m_position.z = position.z;
 	}
 
-	void GameObject::setScale(const cheetah::Vector3f& scale)
+	void GameObject::setScale(const Vector3f& scale)
 	{
 		m_scale.x = scale.x;
 		m_scale.y = scale.y;
 		m_scale.z = scale.z;
 	}
 
-	void GameObject::translate(const cheetah::Vector3f& position)
+	void GameObject::translate(const Vector3f& position)
 	{
 		m_position.x += position.x;
 		m_position.y += position.y;

@@ -3,6 +3,7 @@
 #include <algorithm>
 
 using namespace cheetah;
+using namespace math;
 
 namespace game
 {

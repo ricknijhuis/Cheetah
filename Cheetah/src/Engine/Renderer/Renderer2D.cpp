@@ -6,9 +6,12 @@
 #include "Shader.h"
 #include "VertexArray.h"
 #include "Resources/ResourceLoader.h"
+#include "Renderer2DQueue.h"
 
 namespace cheetah
 {
+	using namespace math;
+
 	struct RenderData
 	{
 		std::shared_ptr<VertexArray> vertexArray;
@@ -26,6 +29,7 @@ namespace cheetah
 	};
 
 	static RenderData* s_data;
+	static Renderer2DQueue* s_renderQueue;
 
 	void Renderer2D::init()
 	{
@@ -46,6 +50,7 @@ namespace cheetah
 		};
 
 		s_data = new RenderData;
+		s_renderQueue = new Renderer2DQueue;
 
 		std::shared_ptr<VertexArray> VAO = VertexArray::create();
 		std::shared_ptr<VertexBuffer> VBO = VertexBuffer::create();
@@ -88,6 +93,18 @@ namespace cheetah
 	{
 	}
 
+	void Renderer2D::addToScene(const AddToSceneParams& params)
+	{
+		Mat4x4f transform = Mat4x4f::translate(Mat4x4f(1.0f), params.position) * Mat4x4f::scale(params.scale) * params.rotation.getMatrix();
+
+		s_renderQueue->add(
+			{
+				params.position.z, 
+				params.shader ? params.shader->getId() : s_data->shader->getId(), 
+				params.texture ? params.texture->getId() : s_data->texture->getId(),
+			}, transform, params.color);
+	}
+
 	void Renderer2D::drawQuad(const DrawQuadParams& params)
 	{
 		s_data->texture->bind();
@@ -116,8 +133,26 @@ namespace cheetah
 		RenderAction::drawIndexed(6, RenderAPI::APITypes::UInt);
 	}
 
+	void Renderer2D::drawScene()
+	{
+		s_renderQueue->sort();
+
+		for (const auto& item : s_renderQueue->s_queue)
+		{
+			// bind shader if not bound
+			// bind texture if not bound
+
+			// iterate matrices
+			// pass matrix
+			// pass scale
+			// pass color
+			// draw
+		}
+	}
+
 	void Renderer2D::shutDown()
 	{
 		delete s_data;
+		delete s_renderQueue;
 	}
 }

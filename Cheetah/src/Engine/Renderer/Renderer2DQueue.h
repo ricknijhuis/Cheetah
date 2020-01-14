@@ -3,7 +3,7 @@
 
 #include "Texture.h"
 #include "Shader.h"
-#include "Math/Mat4x4"
+#include "Math/Mat4x4.h"
 
 #include <vector>
 #include <memory>
@@ -12,34 +12,43 @@
 
 namespace cheetah
 {
-	struct Render2DQueueItem
+	struct Renderer2DQueueItem
 	{
-		std::unique_ptr<Shader> shader;
-		std::unique_ptr<Texture> texture;
+		unsigned int id;
+		float z = 0.0f;
+		unsigned int shaderId;
+		unsigned int textureId;
 	};
 
-	struct Render2DQueueAddParams
+	struct Renderer2DMatrixQueueItem
+	{
+		unsigned int id;
+		math::Mat4x4f transform;
+		math::Vector4f color;
+	};
+
+	struct Renderer2DQueueAddParams
 	{
 		float z = 0.0f;
-		Mat4x4f transform;
-		std::unique_ptr<Shader> shader;
-		std::unique_ptr<Texture> texture;
+		unsigned int shaderId;
+		unsigned int textureId;
 	};
 
-	class Render2DQueue
+	class Renderer2DQueue
 	{
 	public:
-		Render2DQueue() = default;
-		~Render2DQueue() = default;
+		Renderer2DQueue() = default;
+		~Renderer2DQueue() = default;
 
-		void add(const Render2DQueueAddParams& params);
+		void add(Renderer2DQueueAddParams params, math::Mat4x4f transform, math::Vector4f color = math::Vector4f(1.0f));
+		void sort();
+
+	public:
+		static std::vector<Renderer2DQueueItem> s_queue;
+		static std::vector<Renderer2DMatrixQueueItem> s_matrixQueue;
 
 	private:
-		unsigned int nextId;
-		unsigned int createId(const float& z, const unsigned int& textureId, const unsigned int& shaderId);
-		std::map<unsigned int, float> m_queue;
-		std::map<unsigned int[2], Render2DQueueItem> m_objectQueue;
-		std::map<unsigned int[2], std::vector<Mat4x4f>> m_transformQueue;
+		bool compare(const Renderer2DQueueItem& a, const Renderer2DQueueItem& b);
 	};
 }
 

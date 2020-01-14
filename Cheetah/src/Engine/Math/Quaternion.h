@@ -7,54 +7,45 @@
 
 #include<math.h>
 
-#include "Core/Core.h"
+#include "../Core/Core.h"
+#include "Vector.h"
 
 namespace cheetah
 {
-	template<typename T>
-	union Quaternion
+	namespace math
 	{
-	public:
-		Quaternion();
-		Quaternion(const T& axisX, const T& axisY, const T& axisZ, const T& degrees);
-		Quaternion(const Vector3<T>& axis, const T& degrees);
-		Quaternion(const T fill[4]);
-
-		struct
+		template<typename T>
+		class Quaternion : public Vector<T, 4>
 		{
-			T axisX, axisY, axisZ, degrees;
+		public:
+			Quaternion();
+			Quaternion(const T& x, const T& y, const T& z, const T& degrees);
+			Quaternion(const Vector3<T>& axis, const T& degrees);
+			Quaternion(const T fill[4]);
+
+			inline const T* get() const;
+			inline Mat4x4<T> getMatrix() const;
+
+			inline void normalize();
+			inline Quaternion<T> normalize(const Quaternion<T>& vector) const;
+
+			inline void operator *= (const T& rhs);
+			inline void operator += (const T& rhs);
+			inline void operator -= (const T& rhs);
+			inline void operator /= (const T& rhs);
+
+			inline Quaternion<T> operator + (const Vector4<T>& rhs) const;
+			inline Quaternion<T> operator - (const Vector4<T>& rhs) const;
+
+			inline T operator * (const Vector4<T>& rhs) const;
 		};
 
-		inline const T* get() const;
-		inline Mat4x4<T> getMatrix() const;
+		template class CH_API Quaternion<float>;
+		template class CH_API Quaternion<double>;
 
-		inline void normalize();
-		inline Quaternion<T> normalize(const Quaternion<T>& vector) const;
-
-		inline void operator *= (const T& rhs);
-		inline void operator += (const T& rhs);
-		inline void operator -= (const T& rhs);
-		inline void operator /= (const T& rhs);
-
-		inline Quaternion<T> operator + (const Vector4<T>& rhs) const;
-		inline Quaternion<T> operator - (const Vector4<T>& rhs) const;
-
-		inline T operator * (const Vector4<T>& rhs) const;
-
-	private:
-		struct
-		{
-			T m_data[4];
-		};
-	};
-
-	template union CH_API Quaternion<float>;
-	template union CH_API Quaternion<int>;
-	template union CH_API Quaternion<double>;
-
-	using Quaternionf = Quaternion<float>;
-	using Quaternioni = Quaternion<int>;
-	using Quaterniond = Quaternion<double>;
+		using Quaternionf = Quaternion<float>;
+		using Quaterniond = Quaternion<double>;
+	}
 }
 
 #include "Quaternion.inl"
