@@ -28,6 +28,7 @@ namespace cheetah
 			void setMat4f(const std::string& name, const bool& transpose, float* value) const override;
 
 			const unsigned int getId() const override;
+			const unsigned int getCurrentBound() const override;
 
 		private:
 			void isSuccesShader(unsigned int id) const;
@@ -38,6 +39,7 @@ namespace cheetah
 
 		private:
 			unsigned int m_id;
+			static unsigned int s_currentBound;
 		};
 	}
 }

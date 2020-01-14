@@ -27,6 +27,7 @@ namespace cheetah
 		virtual void setMat4f(const std::string& name, const bool& transpose, float* value) const = 0;
 
 		virtual const unsigned int getId() const = 0;
+		virtual const unsigned int getCurrentBound() const = 0;
 
 		static short int getShaderTypeSize(ShaderTypes shaderType);
 		static short int getShaderTypeComponentCount(ShaderTypes shaderType);

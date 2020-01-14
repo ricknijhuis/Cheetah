@@ -16,8 +16,8 @@ namespace cheetah
 	{
 		unsigned int id;
 		float z = 0.0f;
-		unsigned int shaderId;
-		unsigned int textureId;
+		Shader* shader;
+		Texture* texture;
 	};
 
 	struct Renderer2DMatrixQueueItem
@@ -30,8 +30,8 @@ namespace cheetah
 	struct Renderer2DQueueAddParams
 	{
 		float z = 0.0f;
-		unsigned int shaderId;
-		unsigned int textureId;
+		Texture* texture;
+		Shader* shader;;
 	};
 
 	class Renderer2DQueue
@@ -39,14 +39,12 @@ namespace cheetah
 	public:
 		Renderer2DQueue() = default;
 		~Renderer2DQueue() = default;
-
 		void add(Renderer2DQueueAddParams params, math::Mat4x4f transform, math::Vector4f color = math::Vector4f(1.0f));
 		void sort();
-
+		void clear();
 	public:
 		static std::vector<Renderer2DQueueItem> s_queue;
 		static std::vector<Renderer2DMatrixQueueItem> s_matrixQueue;
-
 	private:
 		bool compare(const Renderer2DQueueItem& a, const Renderer2DQueueItem& b);
 	};

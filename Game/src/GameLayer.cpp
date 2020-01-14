@@ -54,6 +54,15 @@ namespace game
 				fighter
 			}
 		);
+
+		//Renderer2D::addToScene({ Vector3f(0.0f, 0.0f, 0.0f), Vector3f((float)Application::getWindow().getWidth(), (float)Application::getWindow().getHeight(), 0.0f), Quaternionf(), Vector4f(1.0f), background });
+		//Renderer2D::addToScene({ Vector3f(5.0f, 3.0f, 2.0f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), fighter });
+		//Renderer2D::addToScene({ Vector3f(1.0f, 100.0f, 0.0f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), background });
+		//Renderer2D::addToScene({ Vector3f(1.0f, 200.0f, 1.0f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), fighter });
+		//Renderer2D::addToScene({ Vector3f(1.0f, 3.0f, 1.1f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), background });
+		//Renderer2D::addToScene({ Vector3f(1.0f, 2.0f, 3.0f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), background });
+		//Renderer2D::addToScene({ Vector3f(1.0f, 1.0f, 0.5f), Vector3f(1.0f), Quaternionf(), Vector4f(1.0f), fighter });
+
 	}
 
 	void GameLayer::onAttach()
@@ -82,6 +91,7 @@ namespace game
 		
 			m_gameScene.drawScene();
 
+			//Renderer2D::drawScene();
 			Renderer2D::endScene();
 		}
 	}

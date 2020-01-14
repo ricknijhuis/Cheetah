@@ -24,15 +24,15 @@ namespace cheetah
 		virtual void addData(void* contents) const = 0;
 		
 		virtual const unsigned int getId() const = 0;
+		virtual const unsigned int getCurrentBound() const = 0;
 		virtual int getWidth() const = 0;
 		virtual int getHeight() const = 0;
 		virtual int getChannels() const = 0;
 
 	public:
 		float scale = 1;
-
 		static std::unique_ptr<Texture> create(const CreateTextureParams& params);
-		// static std::unique_ptr<Texture> create(unsigned char* contents, int width, int height, short int nrOfChannels = 3);
+		static Texture* createRaw(const CreateTextureParams& params);
 	};
 }
 

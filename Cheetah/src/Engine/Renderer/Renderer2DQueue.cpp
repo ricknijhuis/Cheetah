@@ -15,7 +15,7 @@ namespace cheetah
 		std::vector<Renderer2DQueueItem>::iterator it = std::find_if(
 			s_queue.begin(),
 			s_queue.end(),
-			[&params](const Renderer2DQueueItem& obj) { return obj.shaderId == params.shaderId && obj.textureId == params.textureId && obj.z == params.z; }
+			[&params](const Renderer2DQueueItem& obj) { return obj.z == params.z && obj.shader->getId() == params.shader->getId() && obj.texture->getId() == params.texture->getId(); }
 		);
 
 		if (it != s_queue.end())
@@ -25,7 +25,7 @@ namespace cheetah
 		else
 		{
 			unsigned int index = s_queue.end() - s_queue.begin();
-			s_queue.emplace_back(Renderer2DQueueItem{ index, params.z, params.shaderId, params.textureId });
+			s_queue.emplace_back(Renderer2DQueueItem{ index, params.z, params.shader, params.texture });
 			s_matrixQueue.emplace_back(Renderer2DMatrixQueueItem{ index, transform, color });
 		}
 	}
@@ -35,15 +35,21 @@ namespace cheetah
 		std::sort(s_queue.begin(), s_queue.end(), std::bind(&Renderer2DQueue::compare, this, std::placeholders::_1, std::placeholders::_2));
 	}
 
+	void Renderer2DQueue::clear()
+	{
+		s_matrixQueue.empty();
+		s_queue.empty();
+	}
+
 	bool Renderer2DQueue::compare(const Renderer2DQueueItem& a, const Renderer2DQueueItem& b)
 	{
 		if (a.z != b.z)
-			return a.z > b.z;
+			return a.z < b.z;
 
-		if (a.shaderId != b.shaderId)
-			return a.shaderId > b.shaderId;
+		if (a.shader->getId() != b.shader->getId())
+			return a.shader->getId() < b.shader->getId();
 
-		return a.textureId > b.textureId;
+		return a.texture->getId() < b.texture->getId();
 
 	}
 }

@@ -17,7 +17,7 @@ namespace cheetah
 		std::shared_ptr<VertexArray> vertexArray;
 		std::shared_ptr<IndexBuffer> indexBuffer;
 		std::shared_ptr<VertexBuffer> vertexBuffer;
-		std::unique_ptr<Texture> texture;
+		Texture* texture;
 		Shader* shader;
 	};
 
@@ -73,7 +73,7 @@ namespace cheetah
 		s_data->indexBuffer = IBO;
 		s_data->vertexBuffer = VBO;
 		s_data->shader = defaultShader;
-		s_data->texture = Texture::create({ 1, 1 });
+		s_data->texture = Texture::createRaw({ 1, 1 });
 
 		unsigned int textureData = 0xffffffff;
 		s_data->texture->addData(&textureData);
@@ -100,9 +100,11 @@ namespace cheetah
 		s_renderQueue->add(
 			{
 				params.position.z, 
-				params.shader ? params.shader->getId() : s_data->shader->getId(), 
-				params.texture ? params.texture->getId() : s_data->texture->getId(),
+				params.texture ? params.texture : s_data->texture,
+				params.shader ? params.shader : s_data->shader,
 			}, transform, params.color);
+
+		s_renderQueue->sort();
 	}
 
 	void Renderer2D::drawQuad(const DrawQuadParams& params)
@@ -139,15 +141,29 @@ namespace cheetah
 
 		for (const auto& item : s_renderQueue->s_queue)
 		{
-			// bind shader if not bound
-			// bind texture if not bound
+			if (item.shader->getId() != item.shader->getCurrentBound())
+				item.shader->use();
 
-			// iterate matrices
-			// pass matrix
-			// pass scale
-			// pass color
-			// draw
+			if (item.texture->getId() != item.texture->getCurrentBound())
+				item.texture->bind();
+
+			for (const auto& matrix : s_renderQueue->s_matrixQueue)
+			{
+				if (matrix.id == item.id)
+				{
+					item.shader->setFloat4("u_Color", matrix.color.x, matrix.color.y, matrix.color.z, matrix.color.w);
+					item.shader->setMat4f("u_Transform", true, &(*matrix.transform.get().begin()));
+					item.shader->setFloat("u_Scale", item.texture->scale);
+
+					s_data->vertexArray->bind();
+					RenderAction::drawIndexed(6, RenderAPI::APITypes::UInt);
+				}
+
+			}
+
 		}
+
+		s_renderQueue->clear();
 	}
 
 	void Renderer2D::shutDown()

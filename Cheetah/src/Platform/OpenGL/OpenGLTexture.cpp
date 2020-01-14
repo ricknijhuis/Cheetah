@@ -6,6 +6,7 @@ namespace cheetah
 {
 	namespace opengl
 	{
+		unsigned int OpenGLTexture::s_currentBound = NULL;
 		OpenGLTexture::OpenGLTexture(const CreateTextureParams& params)
 			: m_width(params.width), m_height(params.height), m_channels(convertChannel(params.nrOfChannels))
 		{
@@ -32,6 +33,7 @@ namespace cheetah
 		void OpenGLTexture::bind() const
 		{
 			glBindTexture(GL_TEXTURE_2D, m_id);
+			s_currentBound = m_id;
 		}
 
 		void OpenGLTexture::unBind() const
@@ -49,6 +51,11 @@ namespace cheetah
 		const unsigned int OpenGLTexture::getId() const
 		{
 			return m_id;
+		}
+
+		const unsigned int OpenGLTexture::getCurrentBound() const
+		{
+			return s_currentBound;
 		}
 
 		int OpenGLTexture::getWidth() const
