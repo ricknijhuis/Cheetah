@@ -2,7 +2,6 @@
 #define CHEETAH_ENGINE_MATH_RGBA_H_
 
 #include "Vector.h"
-#include "Vector3.h"
 #include "Rgb.h"
 
 namespace cheetah
@@ -18,5 +17,7 @@ namespace cheetah
 		};
 	}
 }
+
+#include "Rgba.inl"
 
 #endif // !CHEETAH_ENGINE_MATH_RGBA_H_

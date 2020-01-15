@@ -10,11 +10,13 @@ namespace cheetah
 	{
 		class Rgb : public Vector<float, 3, VectorType::Color>
 		{
-			Rgba();
-			Rgba(const float& fill);
-			Rgba(const float fill[3]);
+			Rgb();
+			Rgb(const float& fill);
+			Rgb(const float fill[3]);
 		};
 	}
 }
+
+#include "Rgb.inl"
 
 #endif // !CHEETAH_ENGINE_MATH_RGB_H_
