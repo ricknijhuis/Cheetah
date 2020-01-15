@@ -11,10 +11,22 @@ namespace cheetah
 			Color = 1
 		};
 
+		template<typename T>
+		class Vector4;
+
+		template<template <typename> class T, typename Y>
+		void operator += (T<Y>& rhs, const T<Y>& lhs);
+
 		template<typename T, size_t size, VectorType type>
 		class Vector
 		{
 		public:
+			// getters
+			inline const T* get() const
+			{
+				return &data[0];
+			}
+
 			union
 			{
 				struct
@@ -22,12 +34,6 @@ namespace cheetah
 					T data[size];
 				};
 			};
-
-			// getters
-			inline const T* get() const
-			{
-				return &data[0];
-			}
 		};
 
 		template<typename T>
@@ -169,6 +175,8 @@ namespace cheetah
 					T x, y, z, w;
 				};
 			};
+
+			friend void operator += <, 4>(Vector4<T>& rhs, const Vector4<T>& lhs);
 		};
 
 		template<typename T>
@@ -213,10 +221,17 @@ namespace cheetah
 				};
 				struct
 				{
-					T x, y, z, w;
+					T r, g, b, a;
 				};
 			};
 		};
+
+		template<class U, typename T, size_t size>
+		void operator += (Vector4<T>& rhs, const Vector4<T>& lhs)
+		{
+			for (int i = 0; i < size, i++)
+				rhs.data[i] += rhs.data[i];
+		}
 	}
 }
 

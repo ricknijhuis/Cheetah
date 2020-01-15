@@ -1,9 +1,9 @@
 #ifndef CHEETAH_ENGINE_MATH_VECTOR4_H_
 #define CHEETAH_ENGINE_MATH_VECTOR4_H_
 
-#include "Core/Core.h"
-#include "Vector3.h"
+#include "../Core/Core.h"
 #include "Vector.h"
+#include "Vector3.h"
 
 namespace cheetah
 {
@@ -44,4 +44,4 @@ namespace cheetah
 
 #include "Vector4.inl"
 
-#endif // !CHEETAH_ENGINE_MATH_VECTOR_H_
+#endif // !CHEETAH_ENGINE_MATH_VECTOR4_H_
