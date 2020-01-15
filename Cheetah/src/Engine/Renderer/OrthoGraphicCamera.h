@@ -17,7 +17,7 @@ namespace cheetah
 		const float zNear = -1.0f;
 		const float zFar = 1.0f;
 		const float aspectRatio;
-		Vector3f position = Vector3f(0.0f);
+		math::Vector3f position = math::Vector3f(0.0f);
 	};
 
 
@@ -26,12 +26,12 @@ namespace cheetah
 	public:
 		OrthoGraphicCamera(const OrthoGraphicCameraParams& params);
 
-		Mat4x4f getViewProjectionMatrix() const;
-		Mat4x4f getProjectionMatrix() const;
-		Mat4x4f getViewMatrix() const;
+		math::Mat4x4f getViewProjectionMatrix() const;
+		math::Mat4x4f getProjectionMatrix() const;
+		math::Mat4x4f getViewMatrix() const;
 
-		void translate(const Vector3f& position);
-		void setPosition(const Vector3f& position);
+		void translate(const math::Vector3f& position);
+		void setPosition(const math::Vector3f& position);
 
 		bool onWindowResize(WindowResizeEvent& event);
 
@@ -45,10 +45,10 @@ namespace cheetah
 		float m_bottom;
 		float m_zNear;
 		float m_zFar;
-		Vector3f m_position;
-		Mat4x4f m_projectionMatrix;
-		Mat4x4f m_viewMatrix;
-		Mat4x4f m_viewProjectionMatrix;
+		math::Vector3f m_position;
+		math::Mat4x4f m_projectionMatrix;
+		math::Mat4x4f m_viewMatrix;
+		math::Mat4x4f m_viewProjectionMatrix;
 	};
 }
 

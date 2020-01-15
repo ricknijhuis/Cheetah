@@ -11,7 +11,6 @@ namespace cheetah
 		{
 		public:
 			OpenGLTexture(const CreateTextureParams& params);
-			// OpenGLTexture(unsigned char* contents, int width, int height, short int nrOfChannels);
 			~OpenGLTexture();
 
 			void bind() const override;
@@ -19,6 +18,8 @@ namespace cheetah
 
 			void addData(void* contents) const override;
 
+			const unsigned int getId() const override;
+			const unsigned int getCurrentBound() const override;
 			int getWidth() const override;
 			int getHeight() const override;
 			int getChannels() const override;
@@ -29,6 +30,7 @@ namespace cheetah
 		private:
 			unsigned int m_id;
 			int m_width, m_height, m_channels;
+			static unsigned int s_currentBound;
 		};
 	}
 }

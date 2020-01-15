@@ -14,7 +14,7 @@ namespace game
 		void updateScene(float deltaTime) override;
 	private:
 		void handleInput(float deltaTime);
-		void spawnLaser(cheetah::Vector3f pos);
+		void spawnLaser(cheetah::math::Vector3f pos);
 		void updateLasers(const float& deltaTime);
 
 	private:

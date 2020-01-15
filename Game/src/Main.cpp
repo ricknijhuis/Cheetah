@@ -12,7 +12,6 @@ namespace game
 	public:
 		Game()
 		{
-			cheetah::RenderAction::setViewPort(0, 0, 1280, 720);
 			this->pushLayer(new GameLayer());
 		}
 

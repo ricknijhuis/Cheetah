@@ -6,6 +6,7 @@
 #include "OrthoGraphicCamera.h"
 #include "Math/Vector3.h"
 #include "Math/Quaternion.h"
+#include "Renderer2DQueue.h"
 #include "Texture.h"
 
 #include <memory>
@@ -15,19 +16,29 @@ namespace cheetah
 {
 	struct DrawQuadParams
 	{
-		Vector3f position;
-		Vector3f scale;
-		Quaternion rotation;
-		Vector4f color;
+		math::Vector3f position;
+		math::Vector3f scale;
+		math::Quaternionf rotation;
+		math::Vector4f color;
 	};
 
 	struct DrawTexturedQuadParams
 	{
-		Vector3f position;
-		Vector3f scale;
-		Quaternion rotation;
-		Vector4f color;
+		math::Vector3f position;
+		math::Vector3f scale;
+		math::Quaternionf rotation;
+		math::Vector4f color;
 		Texture* texture = nullptr;
+	};
+
+	struct AddToSceneParams
+	{
+		math::Vector3f position;
+		math::Vector3f scale;
+		math::Quaternionf rotation;
+		math::Vector4f color;
+		Texture* texture = nullptr;
+		Shader* shader = nullptr;
 	};
 
 	class CH_API Renderer2D
@@ -40,7 +51,7 @@ namespace cheetah
 		// Ends scene
 		static void endScene();
 		// adds to scene for use in combination with draw scene
-		static void addToScene();
+		static void addToScene(const AddToSceneParams& params);
 		// directly draws quad
 		static void drawQuad(const DrawQuadParams& params);
 		static void drawQuad(const DrawTexturedQuadParams& params);

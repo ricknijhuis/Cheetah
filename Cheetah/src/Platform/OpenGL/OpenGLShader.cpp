@@ -7,6 +7,8 @@ namespace cheetah
 {
 	namespace opengl
 	{
+		unsigned int OpenGLShader::s_currentBound = NULL;
+
 		OpenGLShader::OpenGLShader(const std::string& content)
 		{
 			std::string contents[] = { content };
@@ -132,6 +134,7 @@ namespace cheetah
 		void OpenGLShader::use() const
 		{
 			glUseProgram(m_id);
+			s_currentBound = m_id;
 		}
 
 		void OpenGLShader::unUse() const
@@ -175,6 +178,16 @@ namespace cheetah
 				std::cout << "WARNING: No location found" << std::endl;
 			}
 			glUniformMatrix4fv(location, 1, transpose, value);
+		}
+
+		const unsigned int OpenGLShader::getId() const
+		{
+			return m_id;
+		}
+
+		const unsigned int OpenGLShader::getCurrentBound() const
+		{
+			return s_currentBound;
 		}
 	}
 }

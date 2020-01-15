@@ -2,6 +2,8 @@
 
 namespace cheetah
 {
+	using namespace math;
+
 	OrthoGraphicCamera::OrthoGraphicCamera(const OrthoGraphicCameraParams& params)
 		:
 		m_projectionMatrix(Mat4x4f::ortho(params.aspectRatio * params.left, params.aspectRatio * params.right, params.top, params.bottom, params.zNear, params.zFar, params.aspectRatio).get()),

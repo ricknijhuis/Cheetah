@@ -7,10 +7,10 @@ namespace game
 {
 	struct GameObjectParams
 	{
-		cheetah::Vector3f position = cheetah::Vector3f(0.0f);
-		cheetah::Vector3f scale = cheetah::Vector3f(1.0f);
-		cheetah::Quaternion rotation = cheetah::Quaternion();
-		cheetah::Vector4f color = cheetah::Vector4f(1.0f);
+		cheetah::math::Vector3f position = cheetah::math::Vector3f(0.0f);
+		cheetah::math::Vector3f scale = cheetah::math::Vector3f(1.0f);
+		cheetah::math::Quaternionf rotation = cheetah::math::Quaternionf();
+		cheetah::math::Vector4f color = cheetah::math::Vector4f(1.0f);
 		cheetah::Texture* texture = nullptr;
 	};
 
@@ -20,16 +20,16 @@ namespace game
 		GameObject(const GameObjectParams& params);
 
 		void setTexture(cheetah::Texture* texture);
-		void setScale(const cheetah::Vector3f& scale);
-		void setPosition(const cheetah::Vector3f& position);
-		void translate(const cheetah::Vector3f& position);
+		void setScale(const cheetah::math::Vector3f& scale);
+		void setPosition(const cheetah::math::Vector3f& position);
+		void translate(const cheetah::math::Vector3f& position);
 		void draw();
 	public:
 		cheetah::Texture* m_texture = nullptr;
-		cheetah::Quaternion m_rotation;
-		cheetah::Vector3f m_position;
-		cheetah::Vector3f m_scale;
-		cheetah::Vector4f m_color;
+		cheetah::math::Quaternionf m_rotation;
+		cheetah::math::Vector3f m_position;
+		cheetah::math::Vector3f m_scale;
+		cheetah::math::Vector4f m_color;
 	};
 }
 

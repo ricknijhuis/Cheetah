@@ -8,6 +8,19 @@ A sample game project is included to provide insight on possible ways to achieve
 
 Having remarks, comments or ideas? please let me know by filing in an issue!
 
+## Contents
+1. [Installation](#1-installation)                                                                                                       
+2. [Available features](#2-available-features)
+3. [Future features](#3-future-featuresin-order-of-importance)
+4. [Basic setup](#4-basic-setup) 
+5. [API](#5-api)\
+    5.1 [Namespaces](#namespaces)\
+        5.1.1. [Namespace cheetah](#namespace-cheetah)\
+            5.1.1.1. [Classes](#classes)\
+            5.1.1.2. [Structs](#structs)\
+            5.1.1.3. [Functions](#functions)\
+            5.1.1.4. [Macros](#macros)
+
 ## 1. Installation
 1. clone this repository 
 2. open folder in your IDE and generate the CMAKE cache (in Visual Studio select file->open->cmake and open cmakelists.txt file)
@@ -46,7 +59,7 @@ All the exposed methods, classes and structs are described here.
 - input -> keyCodes
 - input -> mouseBtnCodes
 
-### cheetah
+## Namespace cheetah
 master namespace contains all namespaces, classes, structs, methods and variables exposed to user.
 
 #### classes
@@ -71,5 +84,54 @@ master namespace contains all namespaces, classes, structs, methods and variable
 - OrthoGraphicCamera
 - Texture
 - Shader
+    
+    #### - Application
+    > class in cheetah
+    
+    ##### Description
+    Starting and closing point of the application, handles game loop.
 
+    ##### Methods
+     ```c++
+     void pushLayer(UpdateLayer* layer);
+     ```
+     Adds an update layer to your application, atleast one layer is required to be able to hook in to the game loop, events
+     are passed down layers until an event is "handled"
+     
+     ```c++
+     void pushOverlay(UpdateLayer* overlay);
+     ```
+     Adds an UpdateLayer at top level to your application, best used as UI Layer in order to get the events first
+          
+     ```c++
+     static void exit();
+     ```
+     Exits the application and shutsdown all subsystems
+     
+     ```c++
+     static Application& getApplication();
+     ```
+     Provides an getter to the application
+     
+     ```c++
+     static Window& getWindow();
+     ```
+     Provides an getter to the window of the application
+
+#### structs
+- TextureParams
+- OrthoGraphicCameraParams
+- DrawQuadParams
+- DrawTexturedQuadParams
+
+#### functions
+- createApplication
+
+#### macros
+- CH_PLATFORM_WINDOWS
+- CH_BUILD_DLL
+- CH_API
+- CH_ASSERT_ENABLED
+- ASSERT
+- STATIC_ASSERT
  

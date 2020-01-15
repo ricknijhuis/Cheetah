@@ -3,6 +3,7 @@
 #include <algorithm>
 
 using namespace cheetah;
+using namespace math;
 
 namespace game
 {
@@ -91,7 +92,7 @@ namespace game
 					GameObjectParams{
 						Vector3f(m_fireSide ? pos.x + 25.0f : pos.x - 25.0f, pos.y - 30.0f, 1.0f),
 						Vector3f(1.0f, 25.0f, 1.0f),
-						Quaternion(),
+						Quaternionf(),
 						Vector4f(1.0f, 0.0f, 0.0f, 0.7f),
 						nullptr
 					}

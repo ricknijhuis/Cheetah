@@ -61,6 +61,8 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_RENDERER_DIR}/Texture.cpp"
 	"${ENGINE_RENDERER_DIR}/OrthoGraphicCamera.h"
 	"${ENGINE_RENDERER_DIR}/OrthoGraphicCamera.cpp"
+	"${ENGINE_RENDERER_DIR}/Renderer2DQueue.h"
+	"${ENGINE_RENDERER_DIR}/Renderer2DQueue.cpp"
 	"${ENGINE_INPUT_DIR}/Input.h"
 	"${ENGINE_INPUT_DIR}/Input.cpp"
 	"${ENGINE_EVENTS_DIR}/ApplicationEvents.h"
@@ -73,6 +75,7 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_EVENTS_DIR}/InputEvents.h"
 	"${ENGINE_EVENTS_DIR}/InputEvents.cpp"
 	"${ENGINE_MATH_DIR}/Vector.cpp"
+	"${ENGINE_MATH_DIR}/Vector.h"
 	"${ENGINE_MATH_DIR}/Vector3.h"
 	"${ENGINE_MATH_DIR}/Vector3.inl"
 	"${ENGINE_MATH_DIR}/Vector4.h"
@@ -81,7 +84,7 @@ list(APPEND SOURCE_FILES
 	"${ENGINE_MATH_DIR}/Mat4x4.inl"
 	"${ENGINE_MATH_DIR}/Mat4x4.cpp"
 	"${ENGINE_MATH_DIR}/Quaternion.h"
-	"${ENGINE_MATH_DIR}/Quaternion.cpp"
+	"${ENGINE_MATH_DIR}/Quaternion.inl"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.h"
 	"${ENGINE_RESOURCES_DIR}/ResourceCache.inl"
 	"${ENGINE_RESOURCES_DIR}/ResourceLoader.h"
@@ -146,15 +149,13 @@ target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:DEBUG>")
 target_compile_definitions(Cheetah PUBLIC "$<$<CONFIG:DEBUG>:CH_ASSERT_ENABLED>")
 
 set_target_properties(Cheetah PROPERTIES LINKER_LANGUAGE CXX)
-message("///////////////////////////////////////////////////////////////")
-message("${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah/Cheetah.dll")
 # Copy dll to game project build folder
 add_custom_command(
 	TARGET Cheetah 
 	POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E copy_if_different
-	"${PROJECT_SOURCE_DIR}/out/build/x64-Debug/Cheetah/Cheetah.dll"
-	"${PROJECT_SOURCE_DIR}/out/build/x64-Debug/${APPLICATION_NAME}"
+	"${PROJECT_BINARY_DIR}/Cheetah/Cheetah.dll"
+	"${PROJECT_BINARY_DIR}/${APPLICATION_NAME}"
 )
 
 #----------------------------------------------
