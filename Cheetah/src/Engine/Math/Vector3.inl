@@ -5,25 +5,25 @@ namespace cheetah
 		// ctors
 		template<typename T>
 		inline Vector3<T>::Vector3()
-			: Vector<T, 3>()
+			: Vector<T, 3, VectorType::Vector>()
 		{
 		}
 
 		template<typename T>
 		inline Vector3<T>::Vector3(const T& fill)
-			: Vector<T, 3>(fill, fill, fill)
+			: Vector<T, 3, VectorType::Vector>(fill, fill, fill)
 		{
 		}
 
 		template<typename T>
 		inline Vector3<T>::Vector3(const T fill[3])
-			: Vector<T, 3>(fill)
+			: Vector<T, 3, VectorType::Vector>(fill)
 		{
 		}
 
 		template<typename T>
 		inline Vector3<T>::Vector3(const T& x, const T& y, const T& z)
-			: Vector<T, 3>(x, y, z)
+			: Vector<T, 3, VectorType::Vector>(x, y, z)
 		{
 		}
 

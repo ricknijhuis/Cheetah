@@ -15,7 +15,7 @@ namespace cheetah
 	namespace math
 	{
 		template<typename T>
-		class Quaternion : public Vector<T, 4>
+		class Quaternion : public Vector<T, 4, VectorType::Vector>
 		{
 		public:
 			Quaternion();

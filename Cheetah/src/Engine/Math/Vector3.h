@@ -9,7 +9,7 @@ namespace cheetah
 	namespace math
 	{
 		template<typename T>
-		class Vector3 : public Vector<T, 3>
+		class Vector3 : public Vector<T, 3, VectorType::Vector>
 		{
 		public:
 			inline Vector3();

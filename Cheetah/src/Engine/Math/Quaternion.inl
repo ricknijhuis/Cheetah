@@ -5,25 +5,25 @@ namespace cheetah
 		// ctors
 		template<typename T>
 		inline Quaternion<T>::Quaternion()
-			: Vector<T, 4>()
+			: Vector<T, 4, VectorType::Vector>()
 		{
 		}
 
 		template<typename T>
 		inline Quaternion<T>::Quaternion(const T& x, const T& y, const T& z, const T& degrees)
-			: Vector<T, 4>(x, y, z, degrees)
+			: Vector<T, 4, VectorType::Vector>(x, y, z, degrees)
 		{
 		}
 
 		template<typename T>
 		inline Quaternion<T>::Quaternion(const Vector3<T>& axis, const T& degrees)
-			: Vector<T, 4>(axis, degrees)
+			: Vector<T, 4, VectorType::Vector>(axis, degrees)
 		{
 		}
 
 		template<typename T>
 		inline Quaternion<T>::Quaternion(const T fill[4])
-			: Vector<T, 4>(fill)
+			: Vector<T, 4, VectorType::Vector>(fill)
 		{
 		}
 
