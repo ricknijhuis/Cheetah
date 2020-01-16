@@ -2,24 +2,36 @@ namespace cheetah
 {
 	namespace math
 	{
-		Rgba::Rgba()
-			: Vector<float, 4, VectorType::Color>()
+		inline void Rgba::operator *= (const float& rhs)
 		{
+			data[0] *= rhs;
+			data[1] *= rhs;
+			data[2] *= rhs;
+			data[3] *= rhs;
 		}
 
-		Rgba::Rgba(const float& fill)
-			: Vector<float, 4, VectorType::Color>(fill)
+		inline void Rgba::operator /= (const float& rhs)
 		{
+			data[0] /= rhs;
+			data[1] /= rhs;
+			data[2] /= rhs;
+			data[3] /= rhs;
 		}
 
-		Rgba::Rgba(const float fill[4])
-			: Vector<float, 4, VectorType::Color>(fill);
+		inline void Rgba::operator += (const float& rhs)
 		{
+			data[0] += rhs;
+			data[1] += rhs;
+			data[2] += rhs;
+			data[3] += rhs;
 		}
 
-		Rgba::Rgba(const Rgb& rgb, float a = 1.0f)
-			: Vector<float, 4, VectorType::Color>(rgb, a);
+		inline void Rgba::operator -= (const float& rhs)
 		{
+			data[0] -= rhs;
+			data[1] -= rhs;
+			data[2] -= rhs;
+			data[3] -= rhs;
 		}
 	}
 }

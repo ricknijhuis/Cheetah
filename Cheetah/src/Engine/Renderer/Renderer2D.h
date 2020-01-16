@@ -5,6 +5,7 @@
 
 #include "OrthoGraphicCamera.h"
 #include "Math/Vector3.h"
+#include "Math/Rgba.h"
 #include "Math/Quaternion.h"
 #include "Renderer2DQueue.h"
 #include "Texture.h"
@@ -19,7 +20,7 @@ namespace cheetah
 		math::Vector3f position;
 		math::Vector3f scale;
 		math::Quaternionf rotation;
-		math::Vector4f color;
+		math::Rgba color;
 	};
 
 	struct DrawTexturedQuadParams
@@ -27,7 +28,7 @@ namespace cheetah
 		math::Vector3f position;
 		math::Vector3f scale;
 		math::Quaternionf rotation;
-		math::Vector4f color;
+		math::Rgba color;
 		Texture* texture = nullptr;
 	};
 
@@ -36,7 +37,7 @@ namespace cheetah
 		math::Vector3f position;
 		math::Vector3f scale;
 		math::Quaternionf rotation;
-		math::Vector4f color;
+		math::Rgba color;
 		Texture* texture = nullptr;
 		Shader* shader = nullptr;
 	};

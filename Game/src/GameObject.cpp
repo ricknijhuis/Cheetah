@@ -10,7 +10,7 @@ namespace game
 		m_scale(params.scale.x, params.scale.y, params.scale.z),
 		m_rotation(),
 		m_texture(params.texture),
-		m_color(params.color.x, params.color.y, params.color.z, params.color.w)
+		m_color(params.color.r, params.color.g, params.color.b, params.color.a)
 	{
 	}
 

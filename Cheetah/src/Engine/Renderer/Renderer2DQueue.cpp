@@ -10,7 +10,7 @@ namespace cheetah
 	std::vector<Renderer2DQueueItem> Renderer2DQueue::s_queue = std::vector<Renderer2DQueueItem>();
 	std::vector<Renderer2DMatrixQueueItem> Renderer2DQueue::s_matrixQueue = std::vector<Renderer2DMatrixQueueItem>();
 
-	void Renderer2DQueue::add(Renderer2DQueueAddParams params, Mat4x4f transform, Vector4f color)
+	void Renderer2DQueue::add(Renderer2DQueueAddParams params, Mat4x4f transform, Rgba color)
 	{
 		std::vector<Renderer2DQueueItem>::iterator it = std::find_if(
 			s_queue.begin(),

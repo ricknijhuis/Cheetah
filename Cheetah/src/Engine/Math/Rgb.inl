@@ -2,19 +2,32 @@ namespace cheetah
 {
 	namespace math
 	{
-		Rgb::Rgb()
-			: Vector<float, 3, VectorType::Color>()
+		inline void Rgb::operator *= (const float& rhs)
 		{
+			data[0] *= rhs;
+			data[1] *= rhs;
+			data[2] *= rhs;
 		}
 
-		Rgb::Rgb(const float& fill)
-			: Vector<float, 3, VectorType::Color>(fill)
+		inline void Rgb::operator /= (const float & rhs)
 		{
+			data[0] /= rhs;
+			data[1] /= rhs;
+			data[2] /= rhs;
 		}
 
-		Rgb::Rgb(const float fill[3])
-			: Vector<float, 3, VectorType::Color>(fill);
+		inline void Rgb::operator += (const float& rhs)
 		{
+			data[0] += rhs;
+			data[1] += rhs;
+			data[2] += rhs;
+		}
+
+		inline void Rgb::operator -= (const float& rhs)
+		{
+			data[0] -= rhs;
+			data[1] -= rhs;
+			data[2] -= rhs;
 		}
 	}
 }

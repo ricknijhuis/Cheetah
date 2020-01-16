@@ -112,7 +112,7 @@ namespace cheetah
 		s_data->texture->bind();
 		Mat4x4f transform = Mat4x4f::translate(Mat4x4f(1.0f), params.position) * Mat4x4f::scale(params.scale) * params.rotation.getMatrix();
 
-		s_data->shader->setFloat4("u_Color", params.color.x, params.color.y, params.color.z, params.color.w);
+		s_data->shader->setFloat4("u_Color", params.color.r, params.color.g, params.color.b, params.color.a);
 		s_data->shader->setMat4f("u_Transform", true, &(*transform.get().begin()));
 		s_data->shader->setFloat("u_Scale", 1.0f);
 
@@ -126,7 +126,7 @@ namespace cheetah
 		params.texture->bind();
 		Mat4x4f transform = Mat4x4f::translate(Mat4x4f(1.0f), params.position) * Mat4x4f::scale(params.scale) * params.rotation.getMatrix();
 
-		s_data->shader->setFloat4("u_Color", params.color.x, params.color.y, params.color.z, params.color.w);
+		s_data->shader->setFloat4("u_Color", params.color.r, params.color.g, params.color.b, params.color.a);
 		s_data->shader->setMat4f("u_Transform", true, &(*transform.get().begin()));
 		s_data->shader->setFloat("u_Scale", params.texture->scale);
 
@@ -151,7 +151,7 @@ namespace cheetah
 			{
 				if (matrix.id == item.id)
 				{
-					item.shader->setFloat4("u_Color", matrix.color.x, matrix.color.y, matrix.color.z, matrix.color.w);
+					item.shader->setFloat4("u_Color", matrix.color.r, matrix.color.g, matrix.color.b, matrix.color.a);
 					item.shader->setMat4f("u_Transform", true, &(*matrix.transform.get().begin()));
 					item.shader->setFloat("u_Scale", item.texture->scale);
 

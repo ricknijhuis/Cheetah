@@ -46,10 +46,10 @@ namespace cheetah
 			{
 			}
 
-			//inline const T* get() const
-			//{
-			//	return &data[0];
-			//}
+			inline const T* get() const
+			{
+				return &data[0];
+			}
 
 			union
 			{
@@ -141,10 +141,10 @@ namespace cheetah
 			{
 			}
 
-			//inline const T* get() const
-			//{
-			//	return &data[0];
-			//}
+			inline const T* get() const
+			{
+				return &data[0];
+			}
 
 			union
 			{
@@ -184,14 +184,14 @@ namespace cheetah
 			}
 
 			Vector(const Vector<T, 3, VectorType::Color>& fill, const T& a)
-				: data{ fill.r, fill.x, fill.b, a }
+				: data{ fill.r, fill.g, fill.b, a }
 			{
 			}
 
-			//inline const T* get() const
-			//{
-			//	return &data[0];
-			//}
+			inline const T* get() const
+			{
+				return &data[0];
+			}
 
 			union
 			{
@@ -205,7 +205,6 @@ namespace cheetah
 				};
 			};
 		};
-
 	}
 }
 

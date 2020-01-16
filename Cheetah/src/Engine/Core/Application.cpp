@@ -5,6 +5,7 @@
 #include "Core/Time.h"
 #include "Input/Input.h"
 #include "Renderer/Renderer.h"
+#include "Math/Vector3.h"
 
 #include <iostream>
 
@@ -17,6 +18,9 @@ namespace cheetah
 		s_instance = this;
 		m_window = std::unique_ptr<Window>((Window::create()));
 		m_window->setEventCallBack(std::bind(&Application::onEvent, this, std::placeholders::_1));
+
+		math::Vector3f test = math::Vector3f();
+		test += 1.0f;
 
 		Renderer::init();
 	}
